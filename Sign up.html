@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Create an Account</h2>
+        <form action="signup.php" method="Post">
+            <input type="text" name="full_name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            
+            <!-- Password Field with Eye Icon -->
+            <div class="password-container">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword('password', this)">🙈</span>
+            </div>
+            
+            <!-- Confirm Password Field with Eye Icon -->
+            <div class="password-container">
+                <input type="password" name="confirm_password" id="confirm-password" placeholder="Confirm Password" required>
+                <span class="toggle-password" onclick="togglePassword('confirm-password', this)">🙈</span>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="index.html">Log in</a></p>
+    </div>
+    <script>
+        function togglePassword(id, icon) {
+            let passwordField = document.getElementById(id);
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.textContent = "👁️"; // Open eye
+            } else {
+                passwordField.type = "password";
+                icon.textContent = "🙈"; // Closed eye
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Welcome Back!</h2>
+        <form action="login.php" method="post">
+            <input type="email" placeholder="Email Address" required>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword()">
+                🙈
+                </span>
+            </div>
+            <button type="submit">Log In</button>
+        </form>
+        <p><a href="Reset Password.html">Forgot Password?</a></p>
+        <p>Don't have an account? <a href="Sign up.html">Sign Up</a></p>
+    </div>
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            var toggleIcon = document.querySelector(".toggle-password");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.textContent = "👁️"; // Closed eye
+            } else {
+                passwordField.type = "password";
+                toggleIcon.textContent = "🙈"; // Open eye
+            }
+        }
+    </script>
+</body>
+</html>
